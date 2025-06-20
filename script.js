@@ -33,13 +33,13 @@ document.addEventListener('click', ({ target }) => {
 }
 )
 
-function startGame() {
+startGame = () => {
     setInterval(decreaseTime, 1000)
     createRandomCircle()
     setTime(time)
 }
 
-function decreaseTime() {
+decreaseTime = () => {
     if (time === 0) {
         timeEl.textContent = `00:00`
         finishGame()
@@ -49,11 +49,11 @@ function decreaseTime() {
     }
 }
 
-function setTime(value) {
+setTime = (value) => {
     timeEl.textContent = `00:${value}`
 }
 
-function createRandomCircle() {
+createRandomCircle = () => {
     const circle = document.createElement('div')
     circle.classList.add('circle')
     const size = getRandomNumber(10, 60)
@@ -73,7 +73,8 @@ function getRandomNumber(min, max) {
     return Math.round(Math.random() * (max - min) + min)
 }
 
-function finishGame() {
+
+finishGame = () => {
     timeEl.parentNode.remove()
     board.innerHTML = `
       <div class="finish-box">
@@ -81,4 +82,7 @@ function finishGame() {
         <button class="restart">На главную</button>
     </div>
     `
+
+
+
 }
