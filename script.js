@@ -26,9 +26,7 @@ document.addEventListener("click", ({ target }) => {
     }
 
     if (target.closest(".restart")) {
-        screens.forEach((screen) => screen.classList.remove("up"));
-        board.innerHTML = "";
-        window.location.reload();
+        restartGame()
     }
 });
 
@@ -83,3 +81,13 @@ finishGame = () => {
     `;
     clearInterval(intevalId);
 };
+
+
+restartGame = () => {
+    screens.forEach((screen) => screen.classList.remove("up"));
+    board.innerHTML = "";
+    time = 0
+    score = 0
+
+
+}
