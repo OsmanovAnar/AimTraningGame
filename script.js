@@ -24,6 +24,12 @@ document.addEventListener('click', ({ target }) => {
         target.remove()
         createRandomCircle()
     }
+
+    if (target.closest('.restart')) {
+        screens.forEach((screen) => screen.classList.remove('up'))
+        board.innerHTML = ''
+        window.location.reload()
+    }
 }
 )
 
@@ -69,5 +75,10 @@ function getRandomNumber(min, max) {
 
 function finishGame() {
     timeEl.parentNode.remove()
-    board.innerHTML = `<h1>Счет: <span class = "score">${score}</span></h1>`
+    board.innerHTML = `
+      <div class="finish-box">
+        <h1>Счет: <span class="score">${score}</span></h1>
+        <button class="restart">На главную</button>
+    </div>
+    `
 }

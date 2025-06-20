@@ -1,31 +1,40 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
     box-sizing: border-box;
 }
+
+li {
+    list-style: none;
+}
+
+
 
 body {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(133, 133, 133);
+    background-color: rgb(127, 127, 127);
     overflow: clip;
     color: rgb(0, 0, 0);
     font-family: system-ui, sans-serif;
     text-align: center;
 }
 
-.start-screen {
+.app {
+    width: 100vw;
+    height: 100vh;
+}
+
+.screen {
+    width: 100vw;
+    height: 100vh;
     transition: all 0.3s ease-in-out;
-    margin-top: 2rem;
-    border: 2px solid black;
-    border-radius: 5%;
     background-color: transparent;
-    padding: 1rem 2rem;
     font-weight: bold;
     font-size: 1.5rem;
 
     &:hover {
-        background-color: rgb(76, 76, 76);
         color: black;
     }
 }
@@ -36,25 +45,40 @@ h1 {
 }
 
 .screen {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
     transition: all 0.5s ease-out;
-    background-image: linear-gradient(30deg,
-            #595959 0%,
-            #121212 47%,
-            #a7a7a7 100%);
+    background-image: gray;
+
+    &.up {
+        margin-top: -100vh;
+    }
 
     h2 {
         font-size: 3rem;
 
-        &.up {
-            margin-top: -100vh;
-        }
+
+    }
+}
+
+#start-btn {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    color: black;
+
+    font-size: 1.5rem;
+
+    &:hover {
+        background-color: rgb(63, 63, 63);
     }
 }
 
@@ -107,4 +131,21 @@ h1 {
 
 .score {
     color: #16d9e3;
+}
+
+
+.restart {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    color: black;
+
+    font-size: 1.5rem;
+
+    &:hover {
+        background-color: rgb(63, 63, 63);
+    }
 }
